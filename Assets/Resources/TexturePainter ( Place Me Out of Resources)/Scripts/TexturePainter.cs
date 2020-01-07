@@ -28,6 +28,8 @@ public class TexturePainter : MonoBehaviour {
     public PhysicsPointer pysicsPointer;
     public GameObject sprayCan;
 
+   
+
 	
 	void Update () {
         //brushColor = ColorSelector.GetColor ();	//Updates our painted color with the selected color
@@ -37,11 +39,11 @@ public class TexturePainter : MonoBehaviour {
         //brushColor = Color.yellow;
         brushColor = pysicsPointer.GetColorAuswahl();
 
-        //if (Input.GetMouseButton(0)) { //OVRinput controler INput abfrage
+        //if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
         { 
 			DoAction();
-		}
+		} 
 		//UpdateBrushCursor ();
 	}
 
