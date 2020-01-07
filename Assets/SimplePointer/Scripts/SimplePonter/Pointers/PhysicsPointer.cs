@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class PhysicsPointer : MonoBehaviour
 {
-    public float defaultLength = 15.0f;
+    public float defaultLength = 25.0f;
 
     public GameObject sprayCan;
 
     private LineRenderer lineRenderer = null;
 
     private Color auswahl = Color.blue;
+
+    private bool isPlaying = false;
 
     private void Awake()
     {
@@ -19,6 +21,11 @@ public class PhysicsPointer : MonoBehaviour
     private void Update()
     {
         UpdateLength();
+
+       // if(gameObject.transform.rotation.x > 50 || gameObject.transform.rotation.z > 50)
+        //{
+         //   FindObjectOfType<AudioManager>().Play("Shake");
+        //}
     }
 
     private void UpdateLength()
@@ -35,6 +42,8 @@ public class PhysicsPointer : MonoBehaviour
         if (hit.collider)
         {
             endPosition = hit.point;
+
+            //if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad) && (hit.collider.tag == "Can"))
             if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Can"))
             {
                 var canRenderer = hit.collider.GetComponent<Renderer>();
@@ -43,6 +52,45 @@ public class PhysicsPointer : MonoBehaviour
                 var spraycanRenderer = sprayCan.GetComponent<Renderer>();
                 spraycanRenderer.material.SetColor("_Color", auswahl);
 
+                FindObjectOfType<AudioManager>().Play("Shake");
+
+            }
+            else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
+            {
+                //FindObjectOfType<AudioManager>().Play("Every Day");
+                hit.collider.gameObject.GetComponent<AudioSource>().Play();
+
+            }
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+            {
+                if (!isPlaying)
+                {
+                    FindObjectOfType<AudioManager>().Play("Burst");
+                    isPlaying = true;
+                }
+            }
+            else
+            {
+                if (isPlaying) { 
+                    FindObjectOfType<AudioManager>().Stop("Burst");
+                    isPlaying = false;
+                    }
+            }
+        }
+        else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
+        {
+            if (!isPlaying)
+            {
+                FindObjectOfType<AudioManager>().Play("Burst");
+                isPlaying = true;
+            }
+        }
+        else
+        {
+            if (isPlaying)
+            {
+                FindObjectOfType<AudioManager>().Stop("Burst");
+                isPlaying = false;
             }
         }
 
