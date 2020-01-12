@@ -5,19 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/SimplePointer/Scenes/ControlHandsBasicTut.unity
-    guid: 4134e0af677ee084fa5dbb8753c2ea1b
-  - enabled: 0
-    path: Assets/SimplePointer/Scenes/PickColor.unity
-    guid: 05e2cc701336d0d4e99f4c51ce78059c
-  - enabled: 0
-    path: Assets/Resources/TexturePainter ( Place Me Out of Resources)/Main.unity
-    guid: a315d093aba95a3479ce7ab4958a126f
-  - enabled: 0
-    path: Assets/ColorJuiceOne.unity
-    guid: df889f42b6c105247a8d78738f6495bc
   - enabled: 1
-    path: Assets/ColorJuiceTwo.unity
+    path: Assets/_ColorJuice/Scenes/Spraydosenregal.unity
     guid: 3282f6df311005f4aaa98a76a289e28f
   m_configObjects: {}

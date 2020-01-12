@@ -1,11 +1,12 @@
 ﻿
 using UnityEngine;
 
+//Klasse die für den pointer zuständig ist, der auf obekte zeigt
 public class PhysicsPointer : MonoBehaviour
 {
     public float defaultLength = 25.0f;
 
-    public GameObject sprayCan;
+    public GameObject sprayCan;  //SprayCan beim controller 
 
     private LineRenderer lineRenderer = null;
 
@@ -34,6 +35,9 @@ public class PhysicsPointer : MonoBehaviour
         lineRenderer.SetPosition(1, CalculateEnd());
     }
 
+    //Methode gibt den Punkt zurück an dem der Pointerstrahl auf ein physics object trifft
+    //Außerdem wird hier abgefragt, auf welches object gezeigt wird 
+    // hit ist das object welches getroffen wird. Über hit.collider.getKomponent<KompeneteDeinerWahl>() können Methoden auf den Objectkomponenten aufgerufen werden die angepeilt werden
     public Vector3 CalculateEnd()
     {
         RaycastHit hit = CreateForwarRaycast();
@@ -43,11 +47,12 @@ public class PhysicsPointer : MonoBehaviour
         {
             endPosition = hit.point;
 
-            //if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad) && (hit.collider.tag == "Can"))
-            if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Can"))
+            //if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad) && (hit.collider.tag == "Can")) // Input möglichkeit für touch button
+
+            if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Can")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
             {
-                var canRenderer = hit.collider.GetComponent<Renderer>();
-                auswahl = canRenderer.material.GetColor("_Color");
+                //var canRenderer = hit.collider.GetComponent<Renderer>();
+                auswahl = hit.collider.gameObject.GetComponent<PointerEvent>().GetNormalColor();
 
                 var spraycanRenderer = sprayCan.GetComponent<Renderer>();
                 spraycanRenderer.material.SetColor("_Color", auswahl);
