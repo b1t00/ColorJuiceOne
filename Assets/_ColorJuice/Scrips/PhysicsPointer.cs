@@ -60,6 +60,10 @@ public class PhysicsPointer : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Shake");
 
             }
+            else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Menucan"))
+            {
+                hit.collider.gameObject.GetComponent<LoadOnClick>().NewScene();
+            }
             else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
             {
                 //FindObjectOfType<AudioManager>().Play("Every Day");
