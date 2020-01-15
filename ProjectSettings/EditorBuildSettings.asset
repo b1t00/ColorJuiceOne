@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_ColorJuice/Scenes/Menu.unity
     guid: 9f234a06452a30c4f8fe31bd1032274d
-  - enabled: 1
+  - enabled: 0
     path: Assets/_ColorJuice/Scenes/Spraydosenregal.unity
     guid: 3282f6df311005f4aaa98a76a289e28f
-  - enabled: 1
+  - enabled: 0
     path: Assets/_ColorJuice/Scenes/Farbraster.unity
     guid: 94d7f50a5029eec44835fac1c1d50b4c
   - enabled: 1

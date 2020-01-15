@@ -10,9 +10,11 @@ public class PhysicsPointer : MonoBehaviour
 
     private LineRenderer lineRenderer = null;
 
-    private Color auswahl = Color.blue;
+    private Color auswahl = Color.blue; //farbe, die gesprayt wird
 
     private bool isPlaying = false;
+
+    public Texture2D imageMap;
 
     private void Awake()
     {
@@ -63,6 +65,21 @@ public class PhysicsPointer : MonoBehaviour
             else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Menucan"))
             {
                 hit.collider.gameObject.GetComponent<LoadOnClick>().NewScene();
+            }
+            else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Farbrad"))
+            {
+                /*var farbradRenderer =  hit.collider.gameObject.GetComponent<Renderer>();
+                Texture2D tex = (Texture2D) farbradRenderer.material.mainTexture; // Get texture of object under mouse pointer
+                auswahl = tex.GetPixelBilinear(hit.textureCoord2.x, hit.textureCoord2.y); // Get color from texture
+                auswahl.a = 255;*/
+
+                Renderer farbradRenderer = hit.collider.gameObject.GetComponent<Renderer>();
+                Texture2D texture = farbradRenderer.material.mainTexture as Texture2D;
+                Vector2 pixelUV = hit.textureCoord;
+                pixelUV.x *= texture.width;
+                pixelUV.y *= texture.height;
+                Vector2 tiling = farbradRenderer.material.mainTextureScale;
+                auswahl = imageMap.GetPixel(Mathf.FloorToInt(pixelUV.x * tiling.x), Mathf.FloorToInt(pixelUV.y * tiling.y));
             }
             else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
             {
