@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26281095, g: 0.35929888, b: 0.54370856, a: 1}
+  m_IndirectSpecularColor: {r: 0.26281103, g: 0.35929897, b: 0.54370856, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -999,6 +999,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3080e49bceeed9246910b0f0e8abcda1, type: 3}
+--- !u!1 &808143005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 100002, guid: a75cc487166ba88428806b9651e4e921,
+    type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243859246820240292}
+  m_Layer: 0
+  m_Name: GhettoBlaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &874117071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,9 +2695,9 @@ Camera:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1925218124 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
+  m_CorrespondingSourceObject: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
     type: 3}
-  m_PrefabInstance: {fileID: 5989177614420570373}
+  m_PrefabInstance: {fileID: 2846450954395200549}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1952204203
 GameObject:
@@ -2943,12 +2960,97 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1925218124}
+  - {fileID: 1243859246820240292}
   - {fileID: 2059798657}
   - {fileID: 939614199}
+  - {fileID: 1925218124}
   m_Father: {fileID: 348266264}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1243859246820240292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 400000, guid: a75cc487166ba88428806b9651e4e921,
+    type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808143005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2137803449}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2846450954395200549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2137803449}
+    m_Modifications:
+    - target: {fileID: 2846450954141257408, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_Name
+      value: GhettoBlaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.469767
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.34000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.8220344
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.17310292
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98490375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -19.937
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846450953560544105, guid: a75cc487166ba88428806b9651e4e921,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a75cc487166ba88428806b9651e4e921, type: 3}
 --- !u!1001 &3588235826679582585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3098,72 +3200,3 @@ PrefabInstance:
       objectReference: {fileID: 1953199873}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e0905c78dd0414ba91cac26cb7162e, type: 3}
---- !u!1001 &5989177614420570373
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2137803449}
-    m_Modifications:
-    - target: {fileID: 5989177613116116559, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_Name
-      value: GhettoBlaster
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.4199996
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.1500001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.21192192
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.97728664
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -24.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989177613116116553, guid: d2648840b2bf0d64197bc669cb692cc7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d2648840b2bf0d64197bc669cb692cc7, type: 3}
