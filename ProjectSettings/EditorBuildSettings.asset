@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_ColorJuice/Scenes/Farbraster.unity
     guid: 94d7f50a5029eec44835fac1c1d50b4c
+  - enabled: 1
+    path: Assets/_ColorJuice/Scenes/Farbrad.unity
+    guid: 00ec613896a580c4fbba7fb8fc960070
   m_configObjects: {}
