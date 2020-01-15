@@ -159,6 +159,7 @@ PlayerSettings:
     Android: com.oculus.UnitySample
     Metro: com.Company.ProductName
     Standalone: com.oculus.UnitySample
+    iOS: com.oculus.UnitySample
     tvOS: com.Company.ProductName
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -403,6 +404,9 @@ PlayerSettings:
     - WindowsMR
   - m_BuildTarget: tvOS
     m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: iOS
+    m_Enabled: 1
     m_Devices: []
   m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
