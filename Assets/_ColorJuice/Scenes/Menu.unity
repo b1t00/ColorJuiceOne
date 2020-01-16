@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Farbrad
+  scene: Spraydosenregal
 --- !u!1 &417308604
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,11 +688,6 @@ PrefabInstance:
       propertyPath: downColor.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 222293212797709949, guid: 5347d20746d3ce94cacd11d73c8d5182,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 64cf0689c3e4b4f33999f3abb1e49183, type: 2}
     - target: {fileID: 5480735793591474595, guid: 5347d20746d3ce94cacd11d73c8d5182,
         type: 3}
       propertyPath: m_TagString
@@ -703,6 +698,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menucan
       objectReference: {fileID: 0}
+    - target: {fileID: 222293212797709949, guid: 5347d20746d3ce94cacd11d73c8d5182,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64cf0689c3e4b4f33999f3abb1e49183, type: 2}
     m_RemovedComponents:
     - {fileID: 222293212797709951, guid: 5347d20746d3ce94cacd11d73c8d5182, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5347d20746d3ce94cacd11d73c8d5182, type: 3}
