@@ -14,19 +14,40 @@ public class PhysicsPointer : MonoBehaviour
 
     private bool isPlaying = false;
 
-   // public Texture2D imageMap;
+    // public Texture2D imageMap;
+    private GameObject farbrasterTemp;
+    bool farbrasterToggle;
 
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         sprayCan = GameObject.FindGameObjectWithTag("HandCan").GetComponent<Renderer>();
-        
+        farbrasterTemp = GameObject.FindGameObjectWithTag("FarbrasterTempo");
+        farbrasterToggle = true;
+
+
     }
 
     private void Update()
     {
         UpdateLength();
         sprayCan.material.SetColor("_Color", auswahl);
+
+        if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad)) {
+            if (!farbrasterToggle)
+            {
+                farbrasterToggle = true;
+                farbrasterTemp.active = true;
+            }
+            else
+            {
+                farbrasterToggle = false;
+                farbrasterTemp.SetActive(false);
+            }
+
+        } // Input möglichkeit für touch button
+
+         
     }
 
     private void UpdateLength()
@@ -57,14 +78,20 @@ public class PhysicsPointer : MonoBehaviour
             endPosition = hit.point;
 
             //if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad) && (hit.collider.tag == "Can")) // Input möglichkeit für touch button
+
+
+
             if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "BodenCan")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
             {
                
                 auswahl = hit.collider.gameObject.GetComponent<PointerEventCansBoden>().GetNormalColor();
+                FindObjectOfType<AudioManager>().Play("Shake");
+            }
 
-               
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Farbkachel")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
+            {
 
-
+                auswahl = hit.collider.gameObject.GetComponent<PointerEventFarbkachel>().GetNormalColor();
                 FindObjectOfType<AudioManager>().Play("Shake");
             }
 

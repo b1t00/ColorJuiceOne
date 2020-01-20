@@ -10,6 +10,8 @@ TagManager:
   - Farbrad
   - BodenCan
   - HandCan
+  - Farbkachel
+  - FarbrasterTempo
   layers:
   - Default
   - TransparentFX
