@@ -10,7 +10,7 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
 {
     //Farben werden im Inspector festgelegt
     [SerializeField] private Color normalColor; // Die Farbe die zum Sprühen verwendet wird
-    [SerializeField] private Color enterColor;  // Farbe die angezeigt wird, wenn man mit pointer über object geht
+    //[SerializeField] private Color enterColor;  // Farbe die angezeigt wird, wenn man mit pointer über object geht
     //[SerializeField] private Color downColor; // Farbe die angezeigt wird, wenn man bestätigt (pointer down)
     [SerializeField] private UnityEvent OnClick = new UnityEvent();
 
@@ -54,7 +54,7 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        meshRenderer.material.color = enterColor;
+        //meshRenderer.material.color = enterColor;
         //print("Enter");
 
         enter = true;
@@ -62,7 +62,7 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        meshRenderer.material.color = normalColor;
+        //meshRenderer.material.color = normalColor;
         //print("Exit");
         enter = false;
     }

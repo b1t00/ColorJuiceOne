@@ -152,6 +152,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+--- !u!20 &469962624 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3191034596817792679, guid: fd595c35d06c1479b9e5ffdf369621ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 3170616857846246690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1632744898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4030966788193271415, guid: 27f8f182d3d9c4930a4994102bf440a9,
@@ -347,6 +353,11 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: c5956ddfbaad94b9b8545bcc923cc33a, type: 3}
+    - target: {fileID: 3770662748842814327, guid: fd595c35d06c1479b9e5ffdf369621ec,
+        type: 3}
+      propertyPath: eventCamera
+      value: 
+      objectReference: {fileID: 469962624}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd595c35d06c1479b9e5ffdf369621ec, type: 3}
 --- !u!1001 &3406137296896023165
