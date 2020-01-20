@@ -42,7 +42,7 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
 
         if (enter || stay)
         {
-            locPos.y = -1f;
+            locPos.y = -1.2f;
             gameObject.transform.localPosition = locPos;
         }
         else
@@ -85,7 +85,7 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
         OnClick.Invoke();
         //print("Click");
 
-        /*bodenCans = GameObject.FindGameObjectsWithTag("BodenCan"); //holt sich alle kacheln
+        bodenCans = GameObject.FindGameObjectsWithTag("BodenCan"); //holt sich alle kacheln
 
         foreach (GameObject cani in bodenCans)
         {
@@ -99,7 +99,7 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
             }
         }
 
-    */
+    
     }
 
     public Color GetNormalColor() //public methode um farbe zu übergeben. Wichtig für die Farbauswahl
