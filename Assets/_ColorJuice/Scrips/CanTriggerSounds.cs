@@ -15,7 +15,7 @@ public class CanTriggerSounds : MonoBehaviour
            //indObjectOfType<AudioManager>().Play("Shake");
 
             Debug.Log("Jetzt Shaken");
-            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
         }
     }
 }
