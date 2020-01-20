@@ -63,27 +63,27 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
     public void OnPointerExit(PointerEventData eventData)
     {
         meshRenderer.material.color = normalColor;
-        print("Exit");
+        //print("Exit");
         enter = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         //meshRenderer.material.color = downColor;
-        print("Down");
+        //print("Down");
         enter = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         //  meshRenderer.material.color = enterColor;
-        print("Up");
+        //print("Up");
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         OnClick.Invoke();
-        print("Click");
+        //print("Click");
 
         /*bodenCans = GameObject.FindGameObjectsWithTag("BodenCan"); //holt sich alle kacheln
 
