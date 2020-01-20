@@ -646,6 +646,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3170616857846246690}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &2009183343 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3191034596817792679, guid: fd595c35d06c1479b9e5ffdf369621ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 3170616857846246690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137803448
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +829,11 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: c5956ddfbaad94b9b8545bcc923cc33a, type: 3}
+    - target: {fileID: 3770662748842814327, guid: fd595c35d06c1479b9e5ffdf369621ec,
+        type: 3}
+      propertyPath: eventCamera
+      value: 
+      objectReference: {fileID: 2009183343}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd595c35d06c1479b9e5ffdf369621ec, type: 3}
 --- !u!1001 &3406137296896023165

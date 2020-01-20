@@ -20,6 +20,8 @@ public class PointerEventFarbkachel : MonoBehaviour, IPointerEnterHandler, IPoin
 
     private Vector3 locPos;
 
+    private GameObject[] kacheln;
+
     bool stay;
     bool enter;
     private void Awake()
@@ -87,7 +89,20 @@ public class PointerEventFarbkachel : MonoBehaviour, IPointerEnterHandler, IPoin
         print("Click");
         //var canRenderer = can.GetComponent<Renderer>();
         //canRenderer.material.SetColor("_Color", normalColor);
-        
+        kacheln = GameObject.FindGameObjectsWithTag("Can"); //holt sich alle kacheln
+
+        foreach (GameObject cani in kacheln)
+        {
+            if (cani.name == gameObject.name) //schaut ob kachel aus array diese kachel ist
+            {
+                stay = true;
+            }
+            else
+            {
+                cani.GetComponent<PointerEventFarbkachel>().SetStay(false);
+            }
+        }
+
     }
 
     public Color GetNormalColor() //public methode um farbe zu übergeben. Wichtig für die Farbauswahl
