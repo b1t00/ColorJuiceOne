@@ -6,19 +6,22 @@ using UnityEngine.EventSystems;
 
 //Scriptkomponente, die auf den Objecten für die Farbauswahl liegt
 
-public class PointerEventFarbkachelPointerEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
+public class PointerEventFarbkachel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
     //Farben werden im Inspector festgelegt
     [SerializeField] private Color normalColor; // Die Farbe die zum Sprühen verwendet wird
-    [SerializeField] private Color enterColor;  // Farbe die angezeigt wird, wenn man mit pointer über object geht
-    [SerializeField] private Color downColor; // Farbe die angezeigt wird, wenn man bestätigt (pointer down)
+    //[SerializeField] private Color enterColor;  // Farbe die angezeigt wird, wenn man mit pointer über object geht
+    //[SerializeField] private Color downColor; // Farbe die angezeigt wird, wenn man bestätigt (pointer down)
     [SerializeField] private UnityEvent OnClick = new UnityEvent();
 
-    public GameObject can; //sprühdose/object das mit bei der Farbauswahl auswählt
+    private GameObject can; //sprühdose/object das mit bei der Farbauswahl auswählt
 
     private MeshRenderer meshRenderer = null;
 
+    private Vector3 locPos;
 
+    bool stay;
+    bool enter;
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -26,30 +29,55 @@ public class PointerEventFarbkachelPointerEvent : MonoBehaviour, IPointerEnterHa
 
         var chooseRenderer = gameObject.GetComponent<Renderer>();
         chooseRenderer.material.SetColor("_Color", normalColor); // Beim Laden wird dem Object die Farbe normalColor zugewiesen
+
+        stay = false;
+        enter = false;
         
     }
 
+    private void Update()
+    {
+        locPos = gameObject.transform.localPosition;
+
+
+        if (enter || stay)
+        {
+            locPos.y = 0.8f;
+            gameObject.transform.localPosition = locPos;
+
+
+        }
+        else
+        {
+            locPos.y = 0.3f;
+            gameObject.transform.localPosition = locPos;
+
+
+        }
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        meshRenderer.material.color = enterColor;
+        //meshRenderer.material.color = enterColor;
+        enter = true;
         print("Enter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        meshRenderer.material.color = normalColor;
+        //meshRenderer.material.color = normalColor;
+        enter = false;
         print("Exit");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        meshRenderer.material.color = downColor;
+        //meshRenderer.material.color = downColor;
         print("Down");
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        meshRenderer.material.color = enterColor;
+        //meshRenderer.material.color = enterColor;
         print("Up");
     }
 
@@ -57,13 +85,18 @@ public class PointerEventFarbkachelPointerEvent : MonoBehaviour, IPointerEnterHa
     {
         OnClick.Invoke();
         print("Click");
-        var canRenderer = can.GetComponent<Renderer>();
-        canRenderer.material.SetColor("_Color", normalColor);
+        //var canRenderer = can.GetComponent<Renderer>();
+        //canRenderer.material.SetColor("_Color", normalColor);
         
     }
 
     public Color GetNormalColor() //public methode um farbe zu übergeben. Wichtig für die Farbauswahl
     {
         return normalColor;
+    }
+
+    public void SetStay(bool stay)
+    {
+        this.stay = stay;
     }
 }

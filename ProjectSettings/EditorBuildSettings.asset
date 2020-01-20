@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: Assets/_ColorJuice/Scenes/Menu.unity
     guid: 9f234a06452a30c4f8fe31bd1032274d
   - enabled: 0
-    path: Assets/_ColorJuice/Scenes/Spraydosenregal.unity
-    guid: 3282f6df311005f4aaa98a76a289e28f
-  - enabled: 0
-    path: Assets/_ColorJuice/Scenes/Farbraster.unity
-    guid: 94d7f50a5029eec44835fac1c1d50b4c
-  - enabled: 0
     path: Assets/_ColorJuice/Scenes/Farbrad.unity
     guid: 00ec613896a580c4fbba7fb8fc960070
   - enabled: 0
-    path: Assets/_ColorJuice/Scenes/Tesscene.unity
-    guid: ea108d65227493f4d8e8e78aca777683
-  - enabled: 1
-    path: Assets/_ColorJuice/Scenes/CansBoden.unity
+    path: Assets/_ColorJuice/Scenes/Fertig_CansBoden.unity
     guid: dc65a877055d3d24ab656ec7d794469d
+  - enabled: 0
+    path: Assets/_ColorJuice/Scenes/_richtigePosition.unity
+    guid: d51fa6b63e223ad439dd660c05b50733
+  - enabled: 0
+    path: Assets/_ColorJuice/Scenes/Ferbig_Farbraster.unity
+    guid: f42f2f9310c254161b25a7f366ccbd57
+  - enabled: 1
+    path: Assets/_ColorJuice/Scenes/Fertig_FarbrasterTemporaer.unity
+    guid: 5ab20d3f17ff346bf88a3b077e89f8f5
   m_configObjects: {}
