@@ -8,6 +8,8 @@ TagManager:
   - Ghetto Blaster
   - Menucan
   - Farbrad
+  - BodenCan
+  - HandCan
   layers:
   - Default
   - TransparentFX
