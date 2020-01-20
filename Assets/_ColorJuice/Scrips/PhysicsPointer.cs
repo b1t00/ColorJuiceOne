@@ -32,10 +32,10 @@ public class PhysicsPointer : MonoBehaviour
     private void UpdateLength()
     {
         Color buswahl = auswahl;
-        buswahl.a = 0.3f;
-        lineRenderer.SetColors(auswahl, buswahl);
-        //lineRenderer.startColor = auswahl;
-        //lineRenderer.endColor = buswahl;
+        buswahl.a = 0.03f;
+        //lineRenderer.SetColors(auswahl, buswahl);
+        lineRenderer.startColor = auswahl;
+        lineRenderer.endColor = buswahl;
 
         
 
