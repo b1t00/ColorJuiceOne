@@ -6,7 +6,7 @@ public class PhysicsPointer : MonoBehaviour
 {
     public float defaultLength = 25.0f;
 
-    public GameObject sprayCan;  //SprayCan beim controller 
+    private Renderer sprayCan;  //SprayCan beim controller 
 
     private LineRenderer lineRenderer = null;
 
@@ -19,22 +19,29 @@ public class PhysicsPointer : MonoBehaviour
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        sprayCan = GameObject.FindGameObjectWithTag("HandCan").GetComponent<Renderer>();
+        
     }
 
     private void Update()
     {
         UpdateLength();
-
-       // if(gameObject.transform.rotation.x > 50 || gameObject.transform.rotation.z > 50)
-        //{
-         //   FindObjectOfType<AudioManager>().Play("Shake");
-        //}
+        sprayCan.material.SetColor("_Color", auswahl);
     }
 
     private void UpdateLength()
     {
+        Color buswahl = auswahl;
+        buswahl.a = 0.3f;
+        lineRenderer.SetColors(auswahl, buswahl);
+        //lineRenderer.startColor = auswahl;
+        //lineRenderer.endColor = buswahl;
+
+        
+
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, CalculateEnd());
+        
     }
 
     //Methode gibt den Punkt zurück an dem der Pointerstrahl auf ein physics object trifft
@@ -50,26 +57,36 @@ public class PhysicsPointer : MonoBehaviour
             endPosition = hit.point;
 
             //if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad) && (hit.collider.tag == "Can")) // Input möglichkeit für touch button
+            if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "BodenCan")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
+            {
+               
+                auswahl = hit.collider.gameObject.GetComponent<PointerEventCansBoden>().GetNormalColor();
 
-            if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Can")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
+               
+
+
+                FindObjectOfType<AudioManager>().Play("Shake");
+            }
+
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Can")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
             {
                 //var canRenderer = hit.collider.GetComponent<Renderer>();
-                auswahl = hit.collider.gameObject.GetComponent<PointerEvent>().GetNormalColor();
+                auswahl = hit.collider.gameObject.GetComponent<PointerEventRegal>().GetNormalColor();
 
-                var spraycanRenderer = sprayCan.GetComponent<Renderer>();
-                spraycanRenderer.material.SetColor("_Color", auswahl);
+                //var spraycanRenderer = sprayCan.GetComponent<Renderer>();
+                //spraycanRenderer.material.SetColor("_Color", auswahl);
 
                 FindObjectOfType<AudioManager>().Play("Shake");
 
             }
-            else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Menucan"))
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Menucan"))
             {
                 hit.collider.gameObject.GetComponent<LoadOnClick>().NewScene();
             }
-            else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Farbrad"))
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Farbrad"))
             {
-                var farbradRenderer =  hit.collider.gameObject.GetComponent<Renderer>();
-                Texture2D tex = (Texture2D) farbradRenderer.material.mainTexture; // Get texture of object under mouse pointer
+                var farbradRenderer = hit.collider.gameObject.GetComponent<Renderer>();
+                Texture2D tex = (Texture2D)farbradRenderer.material.mainTexture; // Get texture of object under mouse pointer
                 auswahl = tex.GetPixelBilinear(hit.textureCoord2.x, hit.textureCoord2.y); // Get color from texture
                 auswahl.a = 255;
 
@@ -86,7 +103,7 @@ public class PhysicsPointer : MonoBehaviour
                 Vector2 tiling = farbradRenderer.material.mainTextureScale;
                 auswahl = imageMap.GetPixel(Mathf.FloorToInt(pixelUV.x * tiling.x), Mathf.FloorToInt(pixelUV.y * tiling.y));*/
             }
-            else if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
             {
                 //FindObjectOfType<AudioManager>().Play("Every Day");
                 hit.collider.gameObject.GetComponent<AudioSource>().Play();
@@ -102,10 +119,11 @@ public class PhysicsPointer : MonoBehaviour
             }
             else
             {
-                if (isPlaying) { 
+                if (isPlaying)
+                {
                     FindObjectOfType<AudioManager>().Stop("Burst");
                     isPlaying = false;
-                    }
+                }
             }
         }
         else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
