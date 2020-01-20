@@ -9,6 +9,7 @@ public class CanTriggerSounds : MonoBehaviour
     void Update()
     {
         if(OVRInput.GetLocalControllerRotation(OVRInput.GetActiveController()).x > 40 || OVRInput.GetLocalControllerRotation(OVRInput.GetActiveController()).z > 40)
+        //if(transform.localRotation.x > 40)
         {
           
            //indObjectOfType<AudioManager>().Play("Shake");

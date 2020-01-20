@@ -13,6 +13,7 @@ public class PhysicsPointer : MonoBehaviour
     private Color auswahl = Color.blue; //farbe, die gesprayt wird
 
     private bool isPlaying = false;
+    private bool musicOn = false;
 
     // public Texture2D imageMap;
     private GameObject farbrasterTemp;
@@ -33,7 +34,7 @@ public class PhysicsPointer : MonoBehaviour
         UpdateLength();
         sprayCan.material.SetColor("_Color", auswahl);
 
-        if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad)) {
+        if (OVRInput.Get(OVRInput.Button.Back)) {
             if (!farbrasterToggle)
             {
                 farbrasterToggle = true;
@@ -133,7 +134,15 @@ public class PhysicsPointer : MonoBehaviour
             else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
             {
                 //FindObjectOfType<AudioManager>().Play("Every Day");
+                if (!musicOn)
+                {
                 hit.collider.gameObject.GetComponent<AudioSource>().Play();
+                    musicOn = true;
+                } else
+                {
+                    hit.collider.gameObject.GetComponent<AudioSource>().Stop();
+                    musicOn = false;
+                }
 
             }
             else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
