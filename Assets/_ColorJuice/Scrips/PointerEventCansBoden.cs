@@ -36,6 +36,10 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
         
         locPos = gameObject.transform.localPosition;
     }
+    private void Start()
+    {
+        bodenCans = GameObject.FindGameObjectsWithTag("BodenCan"); //holt sich alle kacheln
+    }
 
     private void Update()
     {
@@ -71,7 +75,18 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         //meshRenderer.material.color = downColor;
         //print("Down");
-        enter = true;
+        //enter = true;
+        foreach (GameObject cani in bodenCans)
+        {
+            if (cani.name == gameObject.name) //schaut ob kachel aus array diese kachel ist
+            {
+                this.stay = true;
+            }
+            else
+            {
+                cani.GetComponent<PointerEventCansBoden>().SetStay(false);
+            }
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -85,19 +100,9 @@ public class PointerEventCansBoden : MonoBehaviour, IPointerEnterHandler, IPoint
         OnClick.Invoke();
         //print("Click");
 
-        bodenCans = GameObject.FindGameObjectsWithTag("BodenCan"); //holt sich alle kacheln
+       
 
-        foreach (GameObject cani in bodenCans)
-        {
-            if (cani.name == gameObject.name) //schaut ob kachel aus array diese kachel ist
-            {
-                this.stay = true;
-            }
-            else
-            {
-                cani.GetComponent<PointerEventCansBoden>().SetStay(false);
-            }
-        }
+        
 
     
     }

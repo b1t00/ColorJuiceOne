@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanTriggerSounds : MonoBehaviour
 {
-    
+    bool once = false;
     // Update is called once per frame
     void Update()
     {
@@ -15,7 +15,12 @@ public class CanTriggerSounds : MonoBehaviour
            //indObjectOfType<AudioManager>().Play("Shake");
 
             Debug.Log("Jetzt Shaken");
+            if (!once)
+            {
+
             GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+                once = true;
+            }
         }
     }
 }

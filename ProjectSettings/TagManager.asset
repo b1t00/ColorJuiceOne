@@ -12,6 +12,8 @@ TagManager:
   - HandCan
   - Farbkachel
   - FarbrasterTempo
+  - Vorlage
+  - Outlines
   layers:
   - Default
   - TransparentFX
