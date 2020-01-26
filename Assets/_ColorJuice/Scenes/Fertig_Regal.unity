@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aaf6ef1880f4fe3a4cbbba83661d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalColor: {r: 0.81568635, g: 0.09411766, b: 0.1254902, a: 0}
+  normalColor: {r: 0.81568635, g: 0.09411766, b: 0.1254902, a: 1}
   OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aaf6ef1880f4fe3a4cbbba83661d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalColor: {r: 0.65882355, g: 0.13725491, b: 0.14117648, a: 0}
+  normalColor: {r: 0.65882355, g: 0.13725491, b: 0.14117648, a: 1}
   OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2958,8 +2958,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137803448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.515, y: 0.054256, z: 0.48901}
+  m_LocalScale: {x: 1.07, y: 1.07, z: 1.07}
   m_Children:
   - {fileID: 533406322}
   m_Father: {fileID: 348266264}
@@ -3121,7 +3121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aaf6ef1880f4fe3a4cbbba83661d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalColor: {r: 0.8705883, g: 0, b: 0.8745099, a: 0}
+  normalColor: {r: 0.8705883, g: 0, b: 0.8745099, a: 1}
   OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3336,6 +3336,11 @@ PrefabInstance:
       propertyPath: eventCamera
       value: 
       objectReference: {fileID: 503093568}
+    - target: {fileID: 3291213399188747233, guid: fd595c35d06c1479b9e5ffdf369621ec,
+        type: 3}
+      propertyPath: m_Parameters.generateLightingData
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd595c35d06c1479b9e5ffdf369621ec, type: 3}
 --- !u!1001 &3406137296896023165

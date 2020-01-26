@@ -36,6 +36,10 @@ public class PointerEventFarbkachel : MonoBehaviour, IPointerEnterHandler, IPoin
         enter = false;
         
     }
+    private void Start()
+    {
+        kacheln = GameObject.FindGameObjectsWithTag("Farbkachel");
+    }
 
     private void Update()
     {
@@ -74,7 +78,18 @@ public class PointerEventFarbkachel : MonoBehaviour, IPointerEnterHandler, IPoin
     public void OnPointerDown(PointerEventData eventData)
     {
         //meshRenderer.material.color = downColor;
-        print("Down");
+        //print("Down");
+        foreach (GameObject cani in kacheln)
+        {
+            if (cani.Equals(gameObject)) //schaut ob kachel aus array diese kachel ist
+            {
+                stay = true;
+            }
+            else
+            {
+                cani.GetComponent<PointerEventFarbkachel>().SetStay(false);
+            }
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -85,23 +100,14 @@ public class PointerEventFarbkachel : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClick.Invoke();
+        //OnClick.Invoke();
         print("Click");
         //var canRenderer = can.GetComponent<Renderer>();
         //canRenderer.material.SetColor("_Color", normalColor);
-        kacheln = GameObject.FindGameObjectsWithTag("Can"); //holt sich alle kacheln
 
-        foreach (GameObject cani in kacheln)
-        {
-            if (cani.name == gameObject.name) //schaut ob kachel aus array diese kachel ist
-            {
-                stay = true;
-            }
-            else
-            {
-                cani.GetComponent<PointerEventFarbkachel>().SetStay(false);
-            }
-        }
+         //holt sich alle kacheln
+
+       
 
     }
 

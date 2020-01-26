@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 908001011186516181}
   - component: {fileID: 908001011186516180}
   m_Layer: 0
-  m_Name: Vorlalge
-  m_TagString: Untagged
+  m_Name: Vorlage
+  m_TagString: Vorlage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -278,6 +278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farbraster
       objectReference: {fileID: 0}
+    - target: {fileID: 603139140908041870, guid: 2a758984b483b8b4997a105c703a1a04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 603139140908041858, guid: 2a758984b483b8b4997a105c703a1a04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -717,6 +722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: normalColor.g
       value: 0.078926206
+      objectReference: {fileID: 0}
+    - target: {fileID: 603139140908041856, guid: 2a758984b483b8b4997a105c703a1a04,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a758984b483b8b4997a105c703a1a04, type: 3}

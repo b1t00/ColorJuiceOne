@@ -8,9 +8,12 @@ public class MembranPulls : MonoBehaviour
 
     Vector3 localSc;
     float count;
+
+    private bool musicOn;
     void Start()
     {
         localSc = gameObject.transform.localScale;
+        musicOn = false;
     }
 
     // Update is called once per frame
@@ -18,15 +21,26 @@ public class MembranPulls : MonoBehaviour
     {
         count++;
             Debug.Log(count);
-        if (count % 8 == 0)
+        if (musicOn)
         {
-            localSc.x = 0.8f;
+        if (count % 30 == 0)
+        {
+            localSc.x = 0.84f;
+            localSc.y = 0.8f;
             gameObject.transform.localScale = localSc;
-        } if(count % 8 == 4)
+        } if(count % 30 == 20)
         {
             localSc.x = 0.6f;
+            localSc.y = 0.6f;
             gameObject.transform.localScale = localSc;
         }
-        
+
+        }
+
     }
+        public void SetMusicOn(bool on)
+        {
+            musicOn = on;
+        }
+        
 }

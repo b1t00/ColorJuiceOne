@@ -41,7 +41,7 @@ public class PointerEventRegal: MonoBehaviour, IPointerEnterHandler, IPointerExi
     private void Start()
     {
         alleCans = GameObject.FindGameObjectsWithTag("Can"); //holt sich alle kacheln
-
+        
     }
     private void Update()
     {
@@ -77,7 +77,18 @@ public class PointerEventRegal: MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerDown(PointerEventData eventData)
     {
         //meshRenderer.material.color = downColor;
-        print("Down");
+        //print("Down");
+        foreach (GameObject yo in alleCans)
+        {
+            if (yo.Equals(gameObject)) //schaut ob kachel aus array diese kachel ist
+            {
+                this.stay = true;
+            }
+            else
+            {
+                yo.GetComponent<PointerEventRegal>().SetStay(false);
+            }
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -89,22 +100,11 @@ public class PointerEventRegal: MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerClick(PointerEventData eventData)
     {
         OnClick.Invoke();
-        print("Click");
-        var canRenderer = can.GetComponent<Renderer>();
-        canRenderer.material.SetColor("_Color", normalColor);
+        //print("Click");
+        
 
 
-        foreach (GameObject cani in alleCans)
-        {
-            if (cani.name == gameObject.name) //schaut ob kachel aus array diese kachel ist
-            {
-                cani.GetComponent<PointerEventRegal>().SetStay(true);
-            }
-            else
-            {
-                cani.GetComponent<PointerEventRegal>().SetStay(false);
-            }
-        }
+       
 
 
 

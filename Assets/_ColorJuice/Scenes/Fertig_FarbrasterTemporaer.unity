@@ -353,6 +353,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 798164912}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1410296329 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3191034596817792679, guid: fd595c35d06c1479b9e5ffdf369621ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 3170616857846246690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1632744898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4030966788193271415, guid: 27f8f182d3d9c4930a4994102bf440a9,
@@ -816,6 +822,11 @@ PrefabInstance:
       propertyPath: normalColor.g
       value: 0.078926206
       objectReference: {fileID: 0}
+    - target: {fileID: 603139140908041856, guid: 2a758984b483b8b4997a105c703a1a04,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a758984b483b8b4997a105c703a1a04, type: 3}
 --- !u!4 &1732873894 stripped
@@ -1022,6 +1033,11 @@ PrefabInstance:
       propertyPath: sounds.Array.data[1].volume
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3770662748842814327, guid: fd595c35d06c1479b9e5ffdf369621ec,
+        type: 3}
+      propertyPath: eventCamera
+      value: 
+      objectReference: {fileID: 1410296329}
     - target: {fileID: 3170616857466791482, guid: fd595c35d06c1479b9e5ffdf369621ec,
         type: 3}
       propertyPath: m_audioClip

@@ -177,6 +177,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 908001009998303192}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1247112451 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3191034596817792679, guid: fd595c35d06c1479b9e5ffdf369621ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 3170616857846246690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1403572289
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +622,11 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 7ab9df1cb23134a45956036e67a26023, type: 3}
+    - target: {fileID: 3770662748842814327, guid: fd595c35d06c1479b9e5ffdf369621ec,
+        type: 3}
+      propertyPath: eventCamera
+      value: 
+      objectReference: {fileID: 1247112451}
     - target: {fileID: 3170616858519446138, guid: fd595c35d06c1479b9e5ffdf369621ec,
         type: 3}
       propertyPath: m_LocalPosition.y

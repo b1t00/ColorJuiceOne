@@ -10,10 +10,12 @@ public class PhysicsPointer : MonoBehaviour
 
     private LineRenderer lineRenderer = null;
 
-    private Color auswahl = Color.blue; //farbe, die gesprayt wird
+    private Color auswahl = Color.yellow; //farbe, die gesprayt wird
 
     private bool isPlaying = false;
     private bool musicOn = false;
+
+    private bool outlinesBool = true;
 
     // public Texture2D imageMap;
     private GameObject farbrasterTemp;
@@ -48,19 +50,17 @@ public class PhysicsPointer : MonoBehaviour
 
         } // Input möglichkeit für touch button
 
-         
+       
+        
+        //lineRenderer.SetColors(auswahl, buswahl);
+        //lineRenderer.startColor = auswahl;
+        lineRenderer.material.SetColor("_Color", auswahl);
+        //lineRenderer.material.("_Color", auswahl);
+        //lineRenderer.endColor = buswahl;
     }
 
     private void UpdateLength()
     {
-        Color buswahl = auswahl;
-        buswahl.a = 0.03f;
-        //lineRenderer.SetColors(auswahl, buswahl);
-        lineRenderer.startColor = auswahl;
-        lineRenderer.endColor = buswahl;
-
-        
-
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, CalculateEnd());
         
@@ -87,6 +87,21 @@ public class PhysicsPointer : MonoBehaviour
                
                 auswahl = hit.collider.gameObject.GetComponent<PointerEventCansBoden>().GetNormalColor();
                 FindObjectOfType<AudioManager>().Play("Shake");
+            }
+
+            if(OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.name == "Vorlage")){
+                var outlines = GameObject.FindGameObjectWithTag("Outlines");
+               
+                if (outlinesBool)
+                {
+                    outlines.SetActive(false);
+                    outlinesBool = false;
+                } else
+                {
+                    outlines.active = true;
+                    outlinesBool = true;
+                }   
+                
             }
 
             else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Farbkachel")) //RIndexTrigger schaut nach Input vom Controller und es wird geschaut welches tag das getroffene Object besitzt
@@ -131,20 +146,55 @@ public class PhysicsPointer : MonoBehaviour
                 Vector2 tiling = farbradRenderer.material.mainTextureScale;
                 auswahl = imageMap.GetPixel(Mathf.FloorToInt(pixelUV.x * tiling.x), Mathf.FloorToInt(pixelUV.y * tiling.y));*/
             }
+            else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster") && OVRInput.Get(OVRInput.Button.PrimaryTouchpad))
+            {
+                // spielt color juice hidden track
+                FindObjectOfType<AudioManager>().Play("ColorJuiceTrack");
+                MembranPulls[] mb = hit.collider.gameObject.GetComponentsInChildren<MembranPulls>();
+                if (!musicOn)
+                {
+                    hit.collider.gameObject.GetComponent<AudioSource>().Play();
+                    musicOn = true;
+                    foreach (MembranPulls membran in mb)
+                    {
+                        membran.SetMusicOn(true);
+                    }
+                }
+                else
+                {
+                    hit.collider.gameObject.GetComponent<AudioSource>().Stop();
+                    musicOn = false;
+                    foreach (MembranPulls membran in mb)
+                    {
+                        membran.SetMusicOn(false);
+                    }
+                }
+
+            }
             else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger) && (hit.collider.tag == "Ghetto Blaster"))
             {
                 //FindObjectOfType<AudioManager>().Play("Every Day");
+                MembranPulls[] mb = hit.collider.gameObject.GetComponentsInChildren<MembranPulls>();
                 if (!musicOn)
                 {
                 hit.collider.gameObject.GetComponent<AudioSource>().Play();
                     musicOn = true;
+                    foreach(MembranPulls membran in mb)
+                    {
+                        membran.SetMusicOn(true);
+                    }
                 } else
                 {
                     hit.collider.gameObject.GetComponent<AudioSource>().Stop();
                     musicOn = false;
+                    foreach (MembranPulls membran in mb)
+                    {
+                        membran.SetMusicOn(false);
+                    }
                 }
 
             }
+            
             else if (OVRInput.Get(OVRInput.RawButton.RIndexTrigger))
             {
                 if (!isPlaying)
