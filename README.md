@@ -35,8 +35,8 @@ Anmerkungen: 		- Bei dem Start des Spiels kommt man in ein Menü, von dem man in
 
 Wir wünschen viel Spaß beim Testen und Malen :)
 
-Autors: Annie Berend -5033782
-	      Normi Völlmecke -5033836
-	      Tobi Schmitt -5052509
+Autors: 	Annie Berend -5033782
+	      	Normi Völlmecke -5033836
+	      	Tobi Schmitt -5052509
 	
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
