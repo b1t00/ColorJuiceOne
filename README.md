@@ -24,12 +24,14 @@ Building:	  	-Unity muss für die Oculus Go konfiguriert werden.
 		        - Ingesamt sind es 6 Scenen: 
 		        _AuswahlMenu, CansBoden, Colorwheel, Farbraster, FarbrasterTemporaer, Regal
 		        - Daraufhin kann eine .apk Datei gebuildet werden und diese
-		        auf eine Ocolus Go geladen werden (Beispielsweise mit "Build And Run")
+		        auf eine Ocolus Go geladen werden (Beispielsweise mit "Build And Run").
+			- Nun kann man die verschiedenen Farbauswahlmöglichkeiten testen und bunte 
+			Bilder an die Wand sprühen. 
 
 Anmerkungen: 		- Bei dem Start des Spiels kommt man in ein Menü, von dem man in die 
 		          verschiedenen Scenen kommen kann. Die Scenen enthalten jeweils unterschiedliche
 		          Farbauswahlmöglichkeiten. 
-		          - Das Laden der Scenen kann etwas dauern. 
+		        - Das Laden der Scenen kann etwas dauern. 
 
 Wir wünschen viel Spaß beim Testen und Malen :)
 
