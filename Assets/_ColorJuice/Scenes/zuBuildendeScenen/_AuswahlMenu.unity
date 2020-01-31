@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Fertig_CansBoden
+  scene: CansBoden
 --- !u!65 &337423664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Fertig_Regal
+  scene: Regal
 --- !u!2083052967 &346831721
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Fertig_FarbrasterTemporaer
+  scene: FarbrasterTemporaer
 --- !u!2083052967 &373287526
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Fertig_Farbraster
+  scene: Farbraster
 --- !u!1 &455019290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Fertig_CansBoden
+  scene: CansBoden
 --- !u!2083052967 &632177091
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Fertig_FarbrasterTemporaer
+  scene: FarbrasterTemporaer
 --- !u!65 &1538424103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2328,7 +2328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Spraydosenregal
+  scene: Regal
 --- !u!1 &1736731582
 GameObject:
   m_ObjectHideFlags: 0
