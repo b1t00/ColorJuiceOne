@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!70 &1466091834979265795
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169863674703613433}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.003783584, y: 10.013277}
-  m_Size: {x: 6.697242, y: 20.026667}
-  m_Direction: 0
 --- !u!114 &7837888688249739198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81100bc514c234488d063bd68fff02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Menu
+  scene: _AuswahlMenu
+--- !u!64 &7522536660127456104
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169863674703613433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: c0a3e59c6b9ac4eeab86a45035ba3dc4, type: 3}
 --- !u!1001 &1497601504525626258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183,12 +181,17 @@ PrefabInstance:
     - target: {fileID: 222293212301632299, guid: 312c546260de296479a8aba817d6109e,
         type: 3}
       propertyPath: scene
-      value: Menu
+      value: _AuswahlMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1626915189809354289, guid: 312c546260de296479a8aba817d6109e,
         type: 3}
       propertyPath: m_TagString
       value: Menucan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626915189811349745, guid: 312c546260de296479a8aba817d6109e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 312c546260de296479a8aba817d6109e, type: 3}
