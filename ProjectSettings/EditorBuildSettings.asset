@@ -6,27 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_ColorJuice/Scenes/Menu.unity
+    path: Assets/_ColorJuice/Scenes/zuBuildendeScenen/_AuswahlMenu.unity
     guid: 9f234a06452a30c4f8fe31bd1032274d
-  - enabled: 0
-    path: Assets/_ColorJuice/Scenes/Farbrad.unity
-    guid: 00ec613896a580c4fbba7fb8fc960070
   - enabled: 1
-    path: Assets/_ColorJuice/Scenes/Fertig_CansBoden.unity
+    path: Assets/_ColorJuice/Scenes/zuBuildendeScenen/CansBoden.unity
     guid: dc65a877055d3d24ab656ec7d794469d
-  - enabled: 0
-    path: Assets/_ColorJuice/Scenes/_richtigePosition.unity
-    guid: d51fa6b63e223ad439dd660c05b50733
   - enabled: 1
-    path: Assets/_ColorJuice/Scenes/Fertig_Farbraster.unity
+    path: Assets/_ColorJuice/Scenes/zuBuildendeScenen/Farbraster.unity
     guid: f42f2f9310c254161b25a7f366ccbd57
   - enabled: 1
-    path: Assets/_ColorJuice/Scenes/Fertig_FarbrasterTemporaer.unity
+    path: Assets/_ColorJuice/Scenes/zuBuildendeScenen/FarbrasterTemporaer.unity
     guid: 5ab20d3f17ff346bf88a3b077e89f8f5
   - enabled: 1
-    path: Assets/_ColorJuice/Scenes/Fertig_Regal.unity
+    path: Assets/_ColorJuice/Scenes/zuBuildendeScenen/Regal.unity
     guid: 00ea0c8dd115b405982c3e526b0ee535
   - enabled: 1
-    path: Assets/_ColorJuice/Scenes/Colorwheel.unity
+    path: Assets/_ColorJuice/Scenes/zuBuildendeScenen/Colorwheel.unity
     guid: 01698f222de77134a91af9fd60864624
   m_configObjects: {}
